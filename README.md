@@ -2,7 +2,7 @@
 
 Configured almost just how I like it.
 
-![Screen shot](screen_shot.png "Screen shot")
+![Screen shot](screen-shot.png "Screen shot")
 
 ## Installation
 
