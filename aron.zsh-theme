@@ -1,23 +1,23 @@
-# directory info
-local current_dir='${PWD/#$HOME/~}'
+setopt prompt_subst
 
-local git_info='$(git_prompt_info)'
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[black]%}git:%{$reset_color%}%{$fg[green]%}["
-ZSH_THEME_GIT_PROMPT_SUFFIX="]%{$reset_color%}"
+local current_dir='$(shrink_path -f)'
+
+local git_info='%{$fg[green]%}$(git_prompt_info)%{$reset_color%}'
+ZSH_THEME_GIT_PROMPT_PREFIX="[git:"
+ZSH_THEME_GIT_PROMPT_SUFFIX="]"
 
 PROMPT="
-%{$fg_bold[black]%}%n \
-%{$reset_color%}\
+%{$fg_bold[magenta]%}$USER %{$reset_color%}@ \
 %{$fg_bold[blue]%}$current_dir
-%{$reset_color%}\
-%{$fg_bold[black]%}> %{$reset_color%}"
+%{$terminfo[bold]$reset_color%}> "
 
-RPROMPT="$git_info"
+RPROMPT="%{$reset_color%}$git_info"
 
 if [[ "$USER" == "root" ]]; then
 PROMPT="
-%{$fg_bold[red]%}%n \
-%{$fg_bold[balck]%}$current_dir \
-$git_info
-%{$terminfo[bold]$fg_bold[black]%}# %{$reset_color%}"
+%{$fg_bold[magenta]%}$USER %{$reset_color%}@ \
+%{$fg_bold[magenta]%}${current_dir}
+%{$reset_color%}# "
+
+RPROMPT="%{$reset_color%}$git_info"
 fi
