@@ -7,8 +7,7 @@ Configured almost just how I like it.
 ## Installation
 
 ```sh
-git clone https://github.com/aronhoyer/zsh-theme.git $ZSH_CUSTOM/themes/aron
-ln -s $ZSH_CUSTOM/themes/aron/aron.zsh-theme $ZSH_CUSTOM/themes/aron.zsh-theme
+curl https://raw.githubusercontent.com/aronhoyer/zsh-theme/master/aron.zsh-theme -o $ZSH_CUSTOM/themes/aron1.zsh-theme
 ```
 
 ## Usage
