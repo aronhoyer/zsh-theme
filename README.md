@@ -11,14 +11,17 @@ ln -s $ZSH_CUSTOM/themes/aron/aron.zsh-theme $ZSH_CUSTOM/themes/aron.zsh-theme
 
 ## Usage
 
-This theme depends on the `shrink-path` plugin that comes bundled with oh-my-zsh.
+This theme depends on the `shrink-path` and `git` plugins that comes bundled with oh-my-zsh.
 
 ```sh
 # Set theme
 ZSH_THEME="aron"
 
 # Set plugins
-plugins=(shrink-path)
+plugins=(
+  git
+  shrink-path
+)
 
 source $ZSH/.oh-my-zsh.sh
 ```
